@@ -25,7 +25,7 @@ The container element wraps a series of rows. It has a screen-based padding whic
 The row class wraps a series of columns. The vertical spacing can be adjusted in *vars.less*.
 
 ### .columns
-The column class should be paired with a size. There are 3 screen sizes available split into a 12 column system.
+The *columns* class should be paired with a size. There are 3 screen sizes available split into a 12 column system.
 The spacing can be adjusted in *vars.less*.
 
 ## Helper classes
