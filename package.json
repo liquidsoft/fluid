@@ -1,0 +1,25 @@
+{
+  "name": "fluid-css",
+  "version": "0.0.1",
+  "description": "Lightweight grid framework written in LessCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liquidsoft/fluid.git"
+  },
+  "author": "Robert Ontiu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liquidsoft/fluid/issues"
+  },
+  "homepage": "https://github.com/liquidsoft/fluid#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
