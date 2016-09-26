@@ -11,8 +11,8 @@
 
 ## Screen sizes
 Currently supports 3 screen sizes preset at:
-- Small *<768px*
-- Medium *>=768px* and *<1200px*
+- Small **<768px**
+- Medium **>=768px** and **<1200px**
 - Large *>=1200px*
 
 *The breakpoints can be changed using LessCSS.*
@@ -30,7 +30,7 @@ Via GIT:
 git clone https://github.com/liquidsoft/fluid
 ```
 
-**Good to go**: Download a precompiled version from the build folder (**note** that the precompiled versions do not support settings). 
+**Good to go**: [Download](https://github.com/liquidsoft/fluid/tree/master/build) a precompiled version from the build folder (**note** that the precompiled versions do not support settings). 
 
 ## Usage
 - Precompiled CSS (download from the **build** folder). All classes are available but lacks the power of variables and mixins.
