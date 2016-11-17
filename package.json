@@ -1,6 +1,6 @@
 {
   "name": "fluid-css",
-  "version": "0.2.2",
+  "version": "0.2.21",
   "description": "Lightweight grid system",
   "main": "index.js",
   "scripts": {
