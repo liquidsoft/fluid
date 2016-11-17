@@ -2,7 +2,7 @@
 > Lightweight grid system
 
 ## What's new ?
-I've rewritten the code in sass and changed the compiler to gulp. Both **less** and **sass* sources are available from **fluid.less** or **fluid.sass**.
+I've rewritten the code in sass and changed the compiler to gulp. Both **less** and **sass** sources are available from **fluid.less** or **fluid.sass**.
 
 ## Features
 - Responsive grid system using semantic CSS classes and LessCSS mixins
