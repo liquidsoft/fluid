@@ -20,6 +20,7 @@
     "grid",
     "system",
     "less",
+    "sass",
     "css"
   ],
   "homepage": "https://github.com/liquidsoft/fluid#readme",
