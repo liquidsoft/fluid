@@ -1,0 +1,266 @@
+/* Media query mixins
+------------------------------------- */
+
+// Applies to medium and large screens
+@mixin medium-screen() {
+  @media (min-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+// Applies to large screens only
+@mixin large-screen() {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+// Applies to small screens only
+@mixin small-screen-only() {
+  @media (max-width: ($breakpoint-small - 1px)) {
+    @content;
+  }
+}
+
+// Applies to medium screens only
+@mixin medium-screen-only() {
+  @media (min-width: $breakpoint-small) and (max-width: ($breakpoint-medium - 1px)) {
+    @content;
+  }
+}
+
+// Applies to small and medium screens only
+@mixin not-large-screen() {
+  @media (max-width: ($breakpoint-medium - 1px)) {
+    @content;
+  }
+}
+
+/* Clearfix mixin
+------------------------------------- */
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* Container mixin
+------------------------------------- */
+
+@mixin container() {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0 ($column-spacing-small * 0.5);
+
+  @include medium-screen() {
+    padding: 0 ($column-spacing-medium * 0.5);
+  }
+
+  @include large-screen() {
+    padding: 0 ($column-spacing-large * 0.5);
+  }
+}
+
+/* Row mixin
+------------------------------------- */
+
+@mixin row() {
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  padding: 0;
+  margin: ($row-spacing-small * 0.5) ($column-spacing-small * -0.5);
+
+  @include medium-screen() {
+    margin: ($row-spacing-medium * 0.5) ($column-spacing-medium * -0.5);
+  }
+
+  @include large-screen() {
+    margin: ($row-spacing-large * 0.5) ($column-spacing-large * -0.5);
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include clearfix();
+}
+
+/* Column mixins
+------------------------------------- */
+
+@mixin column( $units: 1, $spacing: $column-spacing-small ) {
+
+  // Prepare some variables
+  $unit-space: $spacing;
+  $column-width: $units * (100% / $columns);
+
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  width: calc(#{$column-width} - #{$unit-space});
+  margin: 0 ($spacing * 0.5);
+  position: relative;
+}
+
+@mixin small-column( $units: 1 ) {
+  @include column($units, $column-spacing-small);
+}
+
+@mixin medium-column( $units: 1 ) {
+  @include medium-screen() {
+    @include column($units, $column-spacing-medium);
+  }
+}
+
+@mixin large-column( $units: 1 ) {
+  @include large-screen() {
+    @include column($units, $column-spacing-large);
+  }
+}
+
+/* Column offset mixins
+------------------------------------- */
+
+@mixin push-column( $units: 1 ) {
+  $unit-width: (100% / $columns);
+
+  left: ($units * $unit-width);
+  right: auto;
+}
+
+@mixin pull-column( $units: 1 ) {
+  $unit-width: (100% / $columns);
+
+  right: ($units * $unit-width);
+  left: auto;
+}
+
+@mixin push-small-column( $units: 1 ) {
+  @include push-column($units);
+}
+
+@mixin pull-small-column( $units: 1 ) {
+  @include pull-column($units);
+}
+
+@mixin push-medium-column( $units: 1 ) {
+  @include medium-screen() {
+    @include push-column($units);
+  }
+}
+
+@mixin pull-medium-column( $units: 1 ) {
+  @include medium-screen() {
+    @include pull-column($units);
+  }
+}
+
+@mixin push-large-column( $units: 1 ) {
+  @include large-screen() {
+    @include push-column($units);
+  }
+}
+
+@mixin pull-large-column( $units: 1) {
+  @include large-screen() {
+    @include pull-column($units);
+  }
+}
+
+/* Generators
+------------------------------------- */
+
+@mixin generate-small-columns() {
+  @for $i from 1 through $columns {
+    &.small-#{$i} {
+      @include small-column($i);
+    }
+
+    &.push-#{$i}, &.push-small-#{$i} {
+      @include push-small-column($i);
+    }
+
+    &.pull-#{$i}, &.pull-small-#{$i} {
+      @include pull-small-column($i);
+    }
+  }
+}
+
+@mixin generate-medium-columns() {
+  @for $i from 1 through $columns {
+    &.medium-#{$i} {
+      @include medium-column($i);
+    }
+
+    &.push-medium-#{$i} {
+      @include push-medium-column($i);
+    }
+
+    &.pull-medium-#{$i} {
+      @include pull-medium-column($i);
+    }
+  }
+}
+
+@mixin generate-large-columns() {
+  @for $i from 1 through $columns {
+    &.large-#{$i} {
+      @include large-column($i);
+    }
+
+    &.push-large-#{$i} {
+      @include push-large-column($i);
+    }
+
+    &.pull-large-#{$i} {
+      @include pull-large-column($i);
+    }
+  }
+}
+
+/* CSS Output
+------------------------------------- */
+
+.clearfix {
+  @include clearfix();
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.container {
+  @include container();
+
+  &.fixed {
+    max-width: $container-fixed-width;
+    margin: 0 auto;
+  }
+}
+
+.row {
+  @include row();
+}
+
+.column, .columns {
+  @include generate-small-columns;
+  @include generate-medium-columns;
+  @include generate-large-columns;
+}

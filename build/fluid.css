@@ -1,15 +1,45 @@
 /* fluid | https://github.com/liquidsoft/fluid
  *
  */
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   Normalize.scss settings
+   ========================================================================== */
+/**
+ * Includes legacy browser support IE6/7
+ *
+ * Set to false if you want to drop support for IE6 and IE7
+ */
+/* Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *  `em` units.
+ */
 html {
   font-family: sans-serif;
+  /* 1 */
   -ms-text-size-adjust: 100%;
+  /* 2 */
   -webkit-text-size-adjust: 100%;
-}
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
 body {
-  margin: 0;
-}
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
 article,
 aside,
 details,
@@ -19,170 +49,328 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
-  display: block;
-}
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
 audio,
 canvas,
 progress,
 video {
   display: inline-block;
+  /* 1 */
   vertical-align: baseline;
-}
+  /* 2 */ }
+
+/**
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
 [hidden],
 template {
-  display: none;
-}
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
 a {
-  background: transparent;
-}
-a:active,
-a:hover {
-  outline: 0;
-}
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
 abbr[title] {
-  border-bottom: 1px dotted;
-}
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
 b,
 strong {
-  font-weight: bold;
-}
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
-}
+  margin: 0.67em 0; }
+
+/**
+ * Addresses styling not present in IE 8/9.
+ */
 mark {
   background: #ff0;
-  color: #000;
-}
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
+
 sup {
-  top: -0.5em;
-}
+  top: -0.5em; }
+
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 8/9/10.
+ * 2. Improves image quality when scaled in IE 7.
+ */
 img {
-  border: 0;
-}
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
-  height: 0;
-}
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
 pre {
-  overflow: auto;
-}
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
-}
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *  Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 4. Improves appearance and consistency in all browsers.
+ */
 button,
 input,
 optgroup,
 select,
 textarea {
   color: inherit;
+  /* 1 */
   font: inherit;
+  /* 2 */
   margin: 0;
-}
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
 button {
-  overflow: visible;
-}
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
 button,
 select {
-  text-transform: none;
-}
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *  and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *  `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *  Known issue: inner spacing remains in IE 6.
+ */
 button,
-html input[type="button"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-button input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-input {
-  line-height: normal;
-}
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
+  /* 2 */
   cursor: pointer;
-}
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ *  Known issue: excess padding remains in IE 6.
+ */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
+  /* 1 */
   padding: 0;
-}
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
+  /* 1 */
   box-sizing: content-box;
-}
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Corrects text not wrapping in Firefox 3.
+ * 4. Corrects alignment displayed oddly in IE 6/7.
+ */
 legend {
   border: 0;
+  /* 1 */
   padding: 0;
-}
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
+
 td,
 th {
-  padding: 0;
-}
+  padding: 0; }
+
 /* Grid settings
 ------------------------------------- */
 /* Media query mixins
@@ -201,955 +389,703 @@ th {
 ------------------------------------- */
 /* CSS Output
 ------------------------------------- */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: " ";
-  display: table;
-}
+  display: table; }
+
 .clearfix:after {
-  clear: both;
-}
+  clear: both; }
+
 .pull-left {
-  float: left;
-}
+  float: left; }
+
 .pull-right {
-  float: right;
-}
+  float: right; }
+
 .container {
   display: block;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
-  padding: 0 15px;
-}
-@media (min-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 15px;
-  }
-}
-.container.fixed {
-  max-width: 1170px;
-  margin: 0 auto;
-}
+  padding: 0 15px; }
+  @media (min-width: 768px) {
+    .container {
+      padding: 0 15px; } }
+  @media (min-width: 1200px) {
+    .container {
+      padding: 0 15px; } }
+  .container.fixed {
+    max-width: 1170px;
+    margin: 0 auto; }
+
 .row {
   display: block;
   box-sizing: border-box;
   width: auto;
   padding: 0;
-  margin: 7.5px -15px;
-}
-@media (min-width: 768px) {
-  .row {
-    margin: 7.5px -15px;
-  }
-}
-@media (min-width: 1200px) {
-  .row {
-    margin: 7.5px -15px;
-  }
-}
-.row:first-child {
-  margin-top: 0;
-}
-.row:last-child {
-  margin-bottom: 0;
-}
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-.row:after {
-  clear: both;
-}
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-.row:after {
-  clear: both;
-}
-.column.small-1,
-.columns.small-1 {
+  margin: 7.5px -15px; }
+  @media (min-width: 768px) {
+    .row {
+      margin: 7.5px -15px; } }
+  @media (min-width: 1200px) {
+    .row {
+      margin: 7.5px -15px; } }
+  .row:first-child {
+    margin-top: 0; }
+  .row:last-child {
+    margin-bottom: 0; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+
+.column.small-1, .columns.small-1 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(8.333333333333334% - 30px);
+  width: calc(8.33333% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-1,
-.columns.push-1,
-.column.push-small-1,
-.columns.push-small-1 {
-  left: 8.33333333%;
-  right: auto;
-}
-.column.pull-1,
-.columns.pull-1,
-.column.pull-small-1,
-.columns.pull-small-1 {
-  left: 8.33333333%;
-  right: auto;
-}
-.column.small-2,
-.columns.small-2 {
+  position: relative; }
+
+.column.push-1, .column.push-small-1, .columns.push-1, .columns.push-small-1 {
+  left: 8.33333%;
+  right: auto; }
+
+.column.pull-1, .column.pull-small-1, .columns.pull-1, .columns.pull-small-1 {
+  right: 8.33333%;
+  left: auto; }
+
+.column.small-2, .columns.small-2 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(16.666666666666668% - 30px);
+  width: calc(16.66667% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-2,
-.columns.push-2,
-.column.push-small-2,
-.columns.push-small-2 {
-  left: 16.66666667%;
-  right: auto;
-}
-.column.pull-2,
-.columns.pull-2,
-.column.pull-small-2,
-.columns.pull-small-2 {
-  left: 16.66666667%;
-  right: auto;
-}
-.column.small-3,
-.columns.small-3 {
+  position: relative; }
+
+.column.push-2, .column.push-small-2, .columns.push-2, .columns.push-small-2 {
+  left: 16.66667%;
+  right: auto; }
+
+.column.pull-2, .column.pull-small-2, .columns.pull-2, .columns.pull-small-2 {
+  right: 16.66667%;
+  left: auto; }
+
+.column.small-3, .columns.small-3 {
   display: block;
   box-sizing: border-box;
   float: left;
   width: calc(25% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-3,
-.columns.push-3,
-.column.push-small-3,
-.columns.push-small-3 {
+  position: relative; }
+
+.column.push-3, .column.push-small-3, .columns.push-3, .columns.push-small-3 {
   left: 25%;
-  right: auto;
-}
-.column.pull-3,
-.columns.pull-3,
-.column.pull-small-3,
-.columns.pull-small-3 {
-  left: 25%;
-  right: auto;
-}
-.column.small-4,
-.columns.small-4 {
+  right: auto; }
+
+.column.pull-3, .column.pull-small-3, .columns.pull-3, .columns.pull-small-3 {
+  right: 25%;
+  left: auto; }
+
+.column.small-4, .columns.small-4 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(33.333333333333336% - 30px);
+  width: calc(33.33333% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-4,
-.columns.push-4,
-.column.push-small-4,
-.columns.push-small-4 {
-  left: 33.33333333%;
-  right: auto;
-}
-.column.pull-4,
-.columns.pull-4,
-.column.pull-small-4,
-.columns.pull-small-4 {
-  left: 33.33333333%;
-  right: auto;
-}
-.column.small-5,
-.columns.small-5 {
+  position: relative; }
+
+.column.push-4, .column.push-small-4, .columns.push-4, .columns.push-small-4 {
+  left: 33.33333%;
+  right: auto; }
+
+.column.pull-4, .column.pull-small-4, .columns.pull-4, .columns.pull-small-4 {
+  right: 33.33333%;
+  left: auto; }
+
+.column.small-5, .columns.small-5 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(41.66666666666667% - 30px);
+  width: calc(41.66667% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-5,
-.columns.push-5,
-.column.push-small-5,
-.columns.push-small-5 {
-  left: 41.66666667%;
-  right: auto;
-}
-.column.pull-5,
-.columns.pull-5,
-.column.pull-small-5,
-.columns.pull-small-5 {
-  left: 41.66666667%;
-  right: auto;
-}
-.column.small-6,
-.columns.small-6 {
+  position: relative; }
+
+.column.push-5, .column.push-small-5, .columns.push-5, .columns.push-small-5 {
+  left: 41.66667%;
+  right: auto; }
+
+.column.pull-5, .column.pull-small-5, .columns.pull-5, .columns.pull-small-5 {
+  right: 41.66667%;
+  left: auto; }
+
+.column.small-6, .columns.small-6 {
   display: block;
   box-sizing: border-box;
   float: left;
   width: calc(50% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-6,
-.columns.push-6,
-.column.push-small-6,
-.columns.push-small-6 {
+  position: relative; }
+
+.column.push-6, .column.push-small-6, .columns.push-6, .columns.push-small-6 {
   left: 50%;
-  right: auto;
-}
-.column.pull-6,
-.columns.pull-6,
-.column.pull-small-6,
-.columns.pull-small-6 {
-  left: 50%;
-  right: auto;
-}
-.column.small-7,
-.columns.small-7 {
+  right: auto; }
+
+.column.pull-6, .column.pull-small-6, .columns.pull-6, .columns.pull-small-6 {
+  right: 50%;
+  left: auto; }
+
+.column.small-7, .columns.small-7 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(58.333333333333336% - 30px);
+  width: calc(58.33333% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-7,
-.columns.push-7,
-.column.push-small-7,
-.columns.push-small-7 {
-  left: 58.33333333%;
-  right: auto;
-}
-.column.pull-7,
-.columns.pull-7,
-.column.pull-small-7,
-.columns.pull-small-7 {
-  left: 58.33333333%;
-  right: auto;
-}
-.column.small-8,
-.columns.small-8 {
+  position: relative; }
+
+.column.push-7, .column.push-small-7, .columns.push-7, .columns.push-small-7 {
+  left: 58.33333%;
+  right: auto; }
+
+.column.pull-7, .column.pull-small-7, .columns.pull-7, .columns.pull-small-7 {
+  right: 58.33333%;
+  left: auto; }
+
+.column.small-8, .columns.small-8 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(66.66666666666667% - 30px);
+  width: calc(66.66667% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-8,
-.columns.push-8,
-.column.push-small-8,
-.columns.push-small-8 {
-  left: 66.66666667%;
-  right: auto;
-}
-.column.pull-8,
-.columns.pull-8,
-.column.pull-small-8,
-.columns.pull-small-8 {
-  left: 66.66666667%;
-  right: auto;
-}
-.column.small-9,
-.columns.small-9 {
+  position: relative; }
+
+.column.push-8, .column.push-small-8, .columns.push-8, .columns.push-small-8 {
+  left: 66.66667%;
+  right: auto; }
+
+.column.pull-8, .column.pull-small-8, .columns.pull-8, .columns.pull-small-8 {
+  right: 66.66667%;
+  left: auto; }
+
+.column.small-9, .columns.small-9 {
   display: block;
   box-sizing: border-box;
   float: left;
   width: calc(75% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-9,
-.columns.push-9,
-.column.push-small-9,
-.columns.push-small-9 {
+  position: relative; }
+
+.column.push-9, .column.push-small-9, .columns.push-9, .columns.push-small-9 {
   left: 75%;
-  right: auto;
-}
-.column.pull-9,
-.columns.pull-9,
-.column.pull-small-9,
-.columns.pull-small-9 {
-  left: 75%;
-  right: auto;
-}
-.column.small-10,
-.columns.small-10 {
+  right: auto; }
+
+.column.pull-9, .column.pull-small-9, .columns.pull-9, .columns.pull-small-9 {
+  right: 75%;
+  left: auto; }
+
+.column.small-10, .columns.small-10 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(83.33333333333334% - 30px);
+  width: calc(83.33333% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-10,
-.columns.push-10,
-.column.push-small-10,
-.columns.push-small-10 {
-  left: 83.33333333%;
-  right: auto;
-}
-.column.pull-10,
-.columns.pull-10,
-.column.pull-small-10,
-.columns.pull-small-10 {
-  left: 83.33333333%;
-  right: auto;
-}
-.column.small-11,
-.columns.small-11 {
+  position: relative; }
+
+.column.push-10, .column.push-small-10, .columns.push-10, .columns.push-small-10 {
+  left: 83.33333%;
+  right: auto; }
+
+.column.pull-10, .column.pull-small-10, .columns.pull-10, .columns.pull-small-10 {
+  right: 83.33333%;
+  left: auto; }
+
+.column.small-11, .columns.small-11 {
   display: block;
   box-sizing: border-box;
   float: left;
-  width: calc(91.66666666666667% - 30px);
+  width: calc(91.66667% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-11,
-.columns.push-11,
-.column.push-small-11,
-.columns.push-small-11 {
-  left: 91.66666667%;
-  right: auto;
-}
-.column.pull-11,
-.columns.pull-11,
-.column.pull-small-11,
-.columns.pull-small-11 {
-  left: 91.66666667%;
-  right: auto;
-}
-.column.small-12,
-.columns.small-12 {
+  position: relative; }
+
+.column.push-11, .column.push-small-11, .columns.push-11, .columns.push-small-11 {
+  left: 91.66667%;
+  right: auto; }
+
+.column.pull-11, .column.pull-small-11, .columns.pull-11, .columns.pull-small-11 {
+  right: 91.66667%;
+  left: auto; }
+
+.column.small-12, .columns.small-12 {
   display: block;
   box-sizing: border-box;
   float: left;
   width: calc(100% - 30px);
   margin: 0 15px;
-  position: relative;
-}
-.column.push-12,
-.columns.push-12,
-.column.push-small-12,
-.columns.push-small-12 {
+  position: relative; }
+
+.column.push-12, .column.push-small-12, .columns.push-12, .columns.push-small-12 {
   left: 100%;
-  right: auto;
-}
-.column.pull-12,
-.columns.pull-12,
-.column.pull-small-12,
-.columns.pull-small-12 {
-  left: 100%;
-  right: auto;
-}
+  right: auto; }
+
+.column.pull-12, .column.pull-small-12, .columns.pull-12, .columns.pull-small-12 {
+  right: 100%;
+  left: auto; }
+
 @media (min-width: 768px) {
-  .column.medium-1,
-  .columns.medium-1 {
+  .column.medium-1, .columns.medium-1 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(8.333333333333334% - 30px);
+    width: calc(8.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-1,
-  .columns.push-medium-1 {
-    left: 8.33333333%;
-    right: auto;
-  }
-}
+  .column.push-medium-1, .columns.push-medium-1 {
+    left: 8.33333%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-1,
-  .columns.pull-medium-1 {
-    right: 8.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-medium-1, .columns.pull-medium-1 {
+    right: 8.33333%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-2,
-  .columns.medium-2 {
+  .column.medium-2, .columns.medium-2 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(16.666666666666668% - 30px);
+    width: calc(16.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-2,
-  .columns.push-medium-2 {
-    left: 16.66666667%;
-    right: auto;
-  }
-}
+  .column.push-medium-2, .columns.push-medium-2 {
+    left: 16.66667%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-2,
-  .columns.pull-medium-2 {
-    right: 16.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-medium-2, .columns.pull-medium-2 {
+    right: 16.66667%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-3,
-  .columns.medium-3 {
+  .column.medium-3, .columns.medium-3 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(25% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-3,
-  .columns.push-medium-3 {
+  .column.push-medium-3, .columns.push-medium-3 {
     left: 25%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-3,
-  .columns.pull-medium-3 {
+  .column.pull-medium-3, .columns.pull-medium-3 {
     right: 25%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-4,
-  .columns.medium-4 {
+  .column.medium-4, .columns.medium-4 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(33.333333333333336% - 30px);
+    width: calc(33.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-4,
-  .columns.push-medium-4 {
-    left: 33.33333333%;
-    right: auto;
-  }
-}
+  .column.push-medium-4, .columns.push-medium-4 {
+    left: 33.33333%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-4,
-  .columns.pull-medium-4 {
-    right: 33.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-medium-4, .columns.pull-medium-4 {
+    right: 33.33333%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-5,
-  .columns.medium-5 {
+  .column.medium-5, .columns.medium-5 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(41.66666666666667% - 30px);
+    width: calc(41.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-5,
-  .columns.push-medium-5 {
-    left: 41.66666667%;
-    right: auto;
-  }
-}
+  .column.push-medium-5, .columns.push-medium-5 {
+    left: 41.66667%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-5,
-  .columns.pull-medium-5 {
-    right: 41.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-medium-5, .columns.pull-medium-5 {
+    right: 41.66667%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-6,
-  .columns.medium-6 {
+  .column.medium-6, .columns.medium-6 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(50% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-6,
-  .columns.push-medium-6 {
+  .column.push-medium-6, .columns.push-medium-6 {
     left: 50%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-6,
-  .columns.pull-medium-6 {
+  .column.pull-medium-6, .columns.pull-medium-6 {
     right: 50%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-7,
-  .columns.medium-7 {
+  .column.medium-7, .columns.medium-7 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(58.333333333333336% - 30px);
+    width: calc(58.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-7,
-  .columns.push-medium-7 {
-    left: 58.33333333%;
-    right: auto;
-  }
-}
+  .column.push-medium-7, .columns.push-medium-7 {
+    left: 58.33333%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-7,
-  .columns.pull-medium-7 {
-    right: 58.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-medium-7, .columns.pull-medium-7 {
+    right: 58.33333%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-8,
-  .columns.medium-8 {
+  .column.medium-8, .columns.medium-8 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(66.66666666666667% - 30px);
+    width: calc(66.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-8,
-  .columns.push-medium-8 {
-    left: 66.66666667%;
-    right: auto;
-  }
-}
+  .column.push-medium-8, .columns.push-medium-8 {
+    left: 66.66667%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-8,
-  .columns.pull-medium-8 {
-    right: 66.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-medium-8, .columns.pull-medium-8 {
+    right: 66.66667%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-9,
-  .columns.medium-9 {
+  .column.medium-9, .columns.medium-9 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(75% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-9,
-  .columns.push-medium-9 {
+  .column.push-medium-9, .columns.push-medium-9 {
     left: 75%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-9,
-  .columns.pull-medium-9 {
+  .column.pull-medium-9, .columns.pull-medium-9 {
     right: 75%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-10,
-  .columns.medium-10 {
+  .column.medium-10, .columns.medium-10 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(83.33333333333334% - 30px);
+    width: calc(83.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-10,
-  .columns.push-medium-10 {
-    left: 83.33333333%;
-    right: auto;
-  }
-}
+  .column.push-medium-10, .columns.push-medium-10 {
+    left: 83.33333%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-10,
-  .columns.pull-medium-10 {
-    right: 83.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-medium-10, .columns.pull-medium-10 {
+    right: 83.33333%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-11,
-  .columns.medium-11 {
+  .column.medium-11, .columns.medium-11 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(91.66666666666667% - 30px);
+    width: calc(91.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-11,
-  .columns.push-medium-11 {
-    left: 91.66666667%;
-    right: auto;
-  }
-}
+  .column.push-medium-11, .columns.push-medium-11 {
+    left: 91.66667%;
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-11,
-  .columns.pull-medium-11 {
-    right: 91.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-medium-11, .columns.pull-medium-11 {
+    right: 91.66667%;
+    left: auto; } }
+
 @media (min-width: 768px) {
-  .column.medium-12,
-  .columns.medium-12 {
+  .column.medium-12, .columns.medium-12 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(100% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 768px) {
-  .column.push-medium-12,
-  .columns.push-medium-12 {
+  .column.push-medium-12, .columns.push-medium-12 {
     left: 100%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 768px) {
-  .column.pull-medium-12,
-  .columns.pull-medium-12 {
+  .column.pull-medium-12, .columns.pull-medium-12 {
     right: 100%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-1,
-  .columns.large-1 {
+  .column.large-1, .columns.large-1 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(8.333333333333334% - 30px);
+    width: calc(8.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-1,
-  .columns.push-large-1 {
-    left: 8.33333333%;
-    right: auto;
-  }
-}
+  .column.push-large-1, .columns.push-large-1 {
+    left: 8.33333%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-1,
-  .columns.pull-large-1 {
-    right: 8.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-large-1, .columns.pull-large-1 {
+    right: 8.33333%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-2,
-  .columns.large-2 {
+  .column.large-2, .columns.large-2 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(16.666666666666668% - 30px);
+    width: calc(16.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-2,
-  .columns.push-large-2 {
-    left: 16.66666667%;
-    right: auto;
-  }
-}
+  .column.push-large-2, .columns.push-large-2 {
+    left: 16.66667%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-2,
-  .columns.pull-large-2 {
-    right: 16.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-large-2, .columns.pull-large-2 {
+    right: 16.66667%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-3,
-  .columns.large-3 {
+  .column.large-3, .columns.large-3 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(25% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-3,
-  .columns.push-large-3 {
+  .column.push-large-3, .columns.push-large-3 {
     left: 25%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-3,
-  .columns.pull-large-3 {
+  .column.pull-large-3, .columns.pull-large-3 {
     right: 25%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-4,
-  .columns.large-4 {
+  .column.large-4, .columns.large-4 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(33.333333333333336% - 30px);
+    width: calc(33.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-4,
-  .columns.push-large-4 {
-    left: 33.33333333%;
-    right: auto;
-  }
-}
+  .column.push-large-4, .columns.push-large-4 {
+    left: 33.33333%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-4,
-  .columns.pull-large-4 {
-    right: 33.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-large-4, .columns.pull-large-4 {
+    right: 33.33333%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-5,
-  .columns.large-5 {
+  .column.large-5, .columns.large-5 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(41.66666666666667% - 30px);
+    width: calc(41.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-5,
-  .columns.push-large-5 {
-    left: 41.66666667%;
-    right: auto;
-  }
-}
+  .column.push-large-5, .columns.push-large-5 {
+    left: 41.66667%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-5,
-  .columns.pull-large-5 {
-    right: 41.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-large-5, .columns.pull-large-5 {
+    right: 41.66667%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-6,
-  .columns.large-6 {
+  .column.large-6, .columns.large-6 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(50% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-6,
-  .columns.push-large-6 {
+  .column.push-large-6, .columns.push-large-6 {
     left: 50%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-6,
-  .columns.pull-large-6 {
+  .column.pull-large-6, .columns.pull-large-6 {
     right: 50%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-7,
-  .columns.large-7 {
+  .column.large-7, .columns.large-7 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(58.333333333333336% - 30px);
+    width: calc(58.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-7,
-  .columns.push-large-7 {
-    left: 58.33333333%;
-    right: auto;
-  }
-}
+  .column.push-large-7, .columns.push-large-7 {
+    left: 58.33333%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-7,
-  .columns.pull-large-7 {
-    right: 58.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-large-7, .columns.pull-large-7 {
+    right: 58.33333%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-8,
-  .columns.large-8 {
+  .column.large-8, .columns.large-8 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(66.66666666666667% - 30px);
+    width: calc(66.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-8,
-  .columns.push-large-8 {
-    left: 66.66666667%;
-    right: auto;
-  }
-}
+  .column.push-large-8, .columns.push-large-8 {
+    left: 66.66667%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-8,
-  .columns.pull-large-8 {
-    right: 66.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-large-8, .columns.pull-large-8 {
+    right: 66.66667%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-9,
-  .columns.large-9 {
+  .column.large-9, .columns.large-9 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(75% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-9,
-  .columns.push-large-9 {
+  .column.push-large-9, .columns.push-large-9 {
     left: 75%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-9,
-  .columns.pull-large-9 {
+  .column.pull-large-9, .columns.pull-large-9 {
     right: 75%;
-    left: auto;
-  }
-}
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-10,
-  .columns.large-10 {
+  .column.large-10, .columns.large-10 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(83.33333333333334% - 30px);
+    width: calc(83.33333% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-10,
-  .columns.push-large-10 {
-    left: 83.33333333%;
-    right: auto;
-  }
-}
+  .column.push-large-10, .columns.push-large-10 {
+    left: 83.33333%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-10,
-  .columns.pull-large-10 {
-    right: 83.33333333%;
-    left: auto;
-  }
-}
+  .column.pull-large-10, .columns.pull-large-10 {
+    right: 83.33333%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-11,
-  .columns.large-11 {
+  .column.large-11, .columns.large-11 {
     display: block;
     box-sizing: border-box;
     float: left;
-    width: calc(91.66666666666667% - 30px);
+    width: calc(91.66667% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-11,
-  .columns.push-large-11 {
-    left: 91.66666667%;
-    right: auto;
-  }
-}
+  .column.push-large-11, .columns.push-large-11 {
+    left: 91.66667%;
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-11,
-  .columns.pull-large-11 {
-    right: 91.66666667%;
-    left: auto;
-  }
-}
+  .column.pull-large-11, .columns.pull-large-11 {
+    right: 91.66667%;
+    left: auto; } }
+
 @media (min-width: 1200px) {
-  .column.large-12,
-  .columns.large-12 {
+  .column.large-12, .columns.large-12 {
     display: block;
     box-sizing: border-box;
     float: left;
     width: calc(100% - 30px);
     margin: 0 15px;
-    position: relative;
-  }
-}
+    position: relative; } }
+
 @media (min-width: 1200px) {
-  .column.push-large-12,
-  .columns.push-large-12 {
+  .column.push-large-12, .columns.push-large-12 {
     left: 100%;
-    right: auto;
-  }
-}
+    right: auto; } }
+
 @media (min-width: 1200px) {
-  .column.pull-large-12,
-  .columns.pull-large-12 {
+  .column.pull-large-12, .columns.pull-large-12 {
     right: 100%;
-    left: auto;
-  }
-}
+    left: auto; } }
 
 /*# sourceMappingURL=fluid.css.map */

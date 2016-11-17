@@ -1,0 +1,22 @@
+/* Grid settings
+------------------------------------- */
+
+// Number of columns in the grid system
+$columns: 12 !default;
+
+// Breakpoints
+$breakpoint-small: 768px !default;
+$breakpoint-medium: 1200px !default;
+
+// Fixed container width
+$container-fixed-width: 1170px !default;
+
+// Row spacing
+$row-spacing-small: 15px !default;
+$row-spacing-medium: 15px !default;
+$row-spacing-large: 15px !default;
+
+// Column spacing
+$column-spacing-small: 30px !default;
+$column-spacing-medium: 30px !default;
+$column-spacing-large: 30px !default;;
